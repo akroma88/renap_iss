@@ -16,10 +16,30 @@ app.post('/', function(req, res) {
 });
 
 app.get('/consultaDpi', function(req, res) {
+  // por ejemplo se puede hacer un GET de http://localhost:3000/consultaDpi?dpi=200001555
+  // donde el ?dpi es el parametro a evaluar luego
   var body;
-  body = {"id":"123"};
+  console.log(req.query.dpi);
+  var dpi = req.query.dpi;
+  body = {"message":"not data"};
+  if(dpi=='200001555'){
+    body = {
+      "id" : "123",
+      "dpi" : dpi,
+      "name" : "Goku",
+      "status" : "true"
+    };  
+  }
+
+  if(dpi=='200001444'){
+    body = {
+      "id" : "124",
+      "dpi" : dpi,
+      "name" : "Vegeta",
+      "status" : "false"
+    };  
+  }
   res.json( [body] )
-  console.log('Hello, I am foo.');
 });
 
 
