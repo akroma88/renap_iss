@@ -21,7 +21,7 @@ app.get('/consultaDpi', function(req, res) {
   var body;
   console.log(req.query.dpi);
   var dpi = req.query.dpi;
-  body = {"message":"not data found"};
+  body = {"message":"not data found!"};
   if(dpi=='200001555'){
     body = {
       "id" : "123",
